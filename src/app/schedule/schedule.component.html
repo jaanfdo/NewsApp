@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="jumbtron">
+    <h1 class="display-4 text-center">Class Schedule</h1>
+    <hr />
+    <div class="row">
+      <table class="table">
+        <tbody>
+          <tr *ngFor="let detail of data">
+            <td>{{detail.course}}</td>
+            <td>{{detail.batchno}}</td>
+            <td>{{detail.subjects}}</td>
+            <td>Date Time : {{detail.date}} {{detail.time}}</td>
+            <td>Floor : {{detail.class_floor}} Class Room : {{detail.class_no}}</td>
+            <td>{{detail.lecturer}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,34 @@
+<div class="container" *ngIf="articledetail">
+  <div class="row">
+    <article class="card mb-4">
+      <header class="card-header text-center">
+        <div class="card-meta">
+          <p><time class="timeago" datetime="articledetail.publishedAt" data-tid="1"></time>
+            {{articledetail.publishedAt | date:"yyyy/MM/dd"}}
+          </p>
+        </div>
+        <h4 class="card-title">{{articledetail.title}}</h4>
+      </header>
+      <a [href]="articledetail.urlToImage">
+        <img class="card-img" [src]="articledetail.urlToImage" />
+      </a>
+      <div class="card-body">
+        <p>{{articledetail.content}}</p>
+        <hr>
+        <div class="mt-5">
+          <h5>Write a response</h5>
+          <div class="row">
+            <div class="col-md-6">
+              <input type="text" class="form-control" id="name" name="name" placeholder="Your name">
+            </div>
+            <div class="col-md-6">
+              <input type="email" class="form-control" id="email" name="email" placeholder="Your email">
+            </div>
+          </div>
+          <textarea class="form-control mt-3" rows="3" placeholder="Write a response.."></textarea>
+          <a href="#" class="btn btn-success mt-3">Publish</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</div>
