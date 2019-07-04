@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../environments/environment';
+import { Observable, of } from 'rxjs';
 const API_URL = environment.ApiUrl;
 const API_KEY = environment.ApiKey;
 
@@ -14,5 +15,9 @@ export class NewsService {
 
   data(url) {
     return this.http.get(API_URL + '/' + url + '&apiKey=' + API_KEY);
+  }
+
+  sourcedata(url) {
+    return this.http.get(API_URL + '/' + url + '?apiKey=' + API_KEY);
   }
 }
