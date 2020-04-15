@@ -22,6 +22,6 @@ export class NewsComponent implements OnInit {
   }
   NewsOne(article) {
     this.selectedArticle = article;
-    //this.router.navigate(['/news-one']);
+    // this.router.navigate(['/news-one']);
   }
 }

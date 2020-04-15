@@ -4,7 +4,7 @@
     <hr />
     <div class="row">
       <ul class="heroes">
-        <li *ngFor="let article of data.articles" style="list-style: none;">
+        <li *ngFor="let article of data?.articles" style="list-style: none;">
           <div class="card">
             <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
             <div class="card-body">

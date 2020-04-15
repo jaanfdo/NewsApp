@@ -4,7 +4,7 @@
     <hr />
     <div class="row">
       <ul class="heroes">
-        <li style="list-style: none;" *ngFor="let article of data.sources">
+        <li style="list-style: none;" *ngFor="let article of data?.sources">
           <div class="card">
             <div class="card-body">
               <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">

@@ -22,6 +22,7 @@ export class NewsCategoryComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
+    // tslint:disable-next-line:no-unused-expression
     this.Categories;
   }
 

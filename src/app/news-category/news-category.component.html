@@ -15,7 +15,7 @@
     </div>
     <div class="row">
       <ul class="heroes">
-        <li style="list-style: none;" *ngFor="let article of data.articles">
+        <li style="list-style: none;" *ngFor="let article of data?.articles">
           <div class="card">
             <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
             <div class="card-body">
