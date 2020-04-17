@@ -18,8 +18,26 @@ export class NewsComponent implements OnInit {
       .subscribe(data => {
         console.log(data);
         this.data = data;
+
+        console.log(data['articles'][0]);
+        this.selectedArticle = data['articles'][0];
       });
+
+      // this.newsService
+      // .sourcedata('language')
+      // .subscribe(data => {
+      //   console.log(data);
+      //   //this.data = data;
+      // });
+
+      // this.newsService
+      // .sourcedata('category')
+      // .subscribe(data => {
+      //   console.log(data);
+      //   //this.data = data;
+      // });
   }
+  
   NewsOne(article) {
     this.selectedArticle = article;
     // this.router.navigate(['/news-one']);

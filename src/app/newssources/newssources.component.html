@@ -1,21 +1,54 @@
 <div class="container">
   <div class="jumbtron">
-    <h1 class="display-4 text-center">News Sources</h1>
+    <h1 class="display-4 text-center">Top Headlines by Sources</h1>
     <hr />
     <div class="row">
-      <ul class="heroes">
-        <li style="list-style: none;" *ngFor="let article of data?.sources">
-          <div class="card">
-            <div class="card-body">
-              <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
-                {{article.name}} - {{article.id}}</p>
-
-              <button class="btn btn-primary" (click)="NewsOne(article)"
-                [class.selected]="article === selectedArticle">Select Article</button>
+      <div class="col-md-4">
+        <h4>Top 5 Sources</h4>
+        <hr />
+        <div class="grid grid-pad">
+          <a *ngFor="let article of data?.sources.slice(0,5)" class="col-1-4" (click)="NewsOne(article)">
+            <div class="module hero">
+              <h4>{{article.name}}</h4>
             </div>
-          </div>
-        </li>
-      </ul>
+          </a>
+          <a class="col-1-4" routerLink="/newssourceslist">
+            See More
+          </a>
+        </div>
+      </div>
+      <div class="col-md-8">
+        <app-news-list [article]="selectedArticle"></app-news-list>
+
+      </div>
     </div>
   </div>
 </div>
+
+
+        <!-- <ul class="heroes">
+          <li *ngFor="let article of data?.articles">
+            <div class="card">
+              <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
+              <div class="card-body">
+                <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
+                  {{article.title}}</p>
+
+                <button class="btn btn-primary" (click)="NewsDetail(article)"
+                  [class.selected]="article === selectedArticle">Read Full Article</button>
+              </div>
+            </div>
+          </li>
+        </ul> -->
+        <!-- <ul class="heroes"> <li *ngFor="let article of data?.sources">
+            <div class="card">
+              <div class="card-body">
+                <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
+                  {{article.name}} - {{article.id}}</p>
+
+                <button class="btn btn-primary" (click)="NewsOne(article)"
+                  [class.selected]="article === selectedArticle">Select Article</button>
+              </div>
+            </div>
+          </li>
+        </ul> -->

@@ -7,6 +7,8 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsCategoryComponent } from './news-category/news-category.component';
 import { NewsCountryComponent } from './news-country/news-country.component';
 import { NewssourcesComponent } from './newssources/newssources.component';
+import { NewssourcesListComponent } from './newssources/newssources-list/newssources-list.component';
+import { NewsListComponent } from './news-list/news-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/news', pathMatch: 'full' },
@@ -15,7 +17,9 @@ const routes: Routes = [
   { path: 'newsdetail', component: NewsDetailsComponent },
   { path: 'newscategory', component: NewsCategoryComponent },
   { path: 'newscounty', component: NewsCountryComponent },
-  { path: 'newssources', component: NewssourcesComponent }
+  { path: 'newssources', component: NewssourcesComponent },
+  { path: 'newssourceslist', component: NewssourcesListComponent },
+  { path: 'newslist/:source', component: NewsListComponent },
 ];
 
 @NgModule({

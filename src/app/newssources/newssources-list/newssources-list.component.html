@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="jumbtron">
+    <h1 class="display-4 text-center">All News Sources</h1>
+    <hr />
+    <div class="row">
+      <div class="grid grid-pad">
+        <a *ngFor="let article of data?.sources" class="col-1-4" routerLink="/newslist/{{article.id}}" >
+          <div class="module hero">
+            <h4>{{article.name}}</h4>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

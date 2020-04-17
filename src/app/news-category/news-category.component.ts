@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../news.service';
+import { Categories } from '../value';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-news-category',
@@ -8,22 +10,24 @@ import { NewsService } from '../news.service';
 })
 export class NewsCategoryComponent implements OnInit {
   data: any;
+  category:any;
+  selectedArticle: any;
+  constructor(private newsService: NewsService, private router: Router) {
+    this.category = Categories;
+    console.log(Categories);
+   }
 
-  Categories: any[] = [
-    { id: 'entertainment', name: 'Entertainment' },
-    { id: 'health', name: 'Health' },
-    { id: 'science', name: 'Science' },
-    { id: 'sports', name: 'Sports' },
-    { id: 'technology', name: 'Technology' },
-    { id: 'entertainment', name: 'Entertainment' },
-    { id: 'business', name: 'Business' }
-  ];
+  ngOnInit() {    
+    console.log(this.category[0]);
+    console.log(this.category[0]['id']);
+    this.newsService
+      .data('top-headlines?category=' + this.category[0]['id'])
+      .subscribe(data => {
+        console.log(data);
+        //this.data = data;
 
-  constructor(private newsService: NewsService) { }
-
-  ngOnInit() {
-    // tslint:disable-next-line:no-unused-expression
-    this.Categories;
+        this.selectedArticle = data;
+      });
   }
 
   NewsOne(item) {
@@ -32,7 +36,15 @@ export class NewsCategoryComponent implements OnInit {
       .data('top-headlines?category=' + item.id)
       .subscribe(data => {
         console.log(data);
-        this.data = data;
+        //this.data = data;
+
+        this.selectedArticle = data;
       });
   }
+
+  // NewsDetail(article) {
+  //   this.newsService.currentArticle = article;
+  //   console.log(this.newsService.currentArticle);
+  //   this.router.navigate(['/newsdetail']);
+  // }
 }

@@ -13,6 +13,8 @@ import { NewsDetailsComponent } from './news-details/news-details.component';
 import { NewsCategoryComponent } from './news-category/news-category.component';
 import { NewsCountryComponent } from './news-country/news-country.component';
 import { NewssourcesComponent } from './newssources/newssources.component';
+import { NewsListComponent } from './news-list/news-list.component';
+import { NewssourcesListComponent } from './newssources/newssources-list/newssources-list.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { NewssourcesComponent } from './newssources/newssources.component';
     NewsDetailsComponent,
     NewsCategoryComponent,
     NewsCountryComponent,
-    NewssourcesComponent
+    NewssourcesComponent,
+    NewsListComponent,
+    NewssourcesListComponent
   ],
   imports: [
     BrowserModule,

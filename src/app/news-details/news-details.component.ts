@@ -10,8 +10,8 @@ export class NewsDetailsComponent implements OnInit {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.articledetail = this.newsService.currentArticle;
     console.log(this.newsService.currentArticle);
+    this.articledetail = this.newsService.currentArticle;
   }
 
 }
