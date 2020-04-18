@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class NewssourcesListComponent implements OnInit {
   data: any;
-  constructor(private newsService: NewsService, private router: Router) { 
+  constructor(private newsService: NewsService, private router: Router) {
     this.newsService
       .sourcedata('sources')
       .subscribe(data => {
@@ -34,8 +34,6 @@ export class NewssourcesListComponent implements OnInit {
       .data('top-headlines?sources=' + item.id)
       .subscribe(data => {
         console.log(data);
-        //this.data = data;
-
         this.newsService.currentArticle = data;
       });
   }
