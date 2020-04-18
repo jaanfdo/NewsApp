@@ -19,7 +19,6 @@ const routes: Routes = [
   { path: 'newscounty', component: NewsCountryComponent },
   { path: 'newssources', component: NewssourcesComponent },
   { path: 'newssourceslist', component: NewssourcesListComponent },
-  { path: 'newslist/:source', component: NewsListComponent },
   { path: 'newssources/:source', component: NewssourcesComponent },
   { path: 'newscategory/:category', component: NewsCategoryComponent },
   { path: 'newscounty/:country', component: NewsCountryComponent },
