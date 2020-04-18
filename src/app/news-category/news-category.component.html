@@ -9,28 +9,34 @@
         <div class="grid grid-pad">
           <a *ngFor="let item of category" class="col-1-4" [class.selected]="article === selectedArticle" (click)="NewsOne(item)">
             <div class="module hero">
-              <h4>{{item.name}} - {{item.id}}</h4>
+              <h4>{{item.name}}</h4>
             </div>
           </a>
         </div>
       </div>
       <div class="col-md-8">
         <app-news-list [article]="selectedArticle"></app-news-list>
-        <!-- <ul class="heroes">
-          <li *ngFor="let article of data?.articles">
-            <div class="card">
-              <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
-              <div class="card-body">
-                <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
-                  {{article.title}}</p>
-
-                <button class="btn btn-primary" (click)="NewsDetail(article)"
-                  [class.selected]="article === selectedArticle">Read Full Article</button>
-              </div>
-            </div>
-          </li>
-        </ul> -->
       </div>
     </div>
   </div>
 </div>
+
+
+
+
+
+
+<!-- <ul class="heroes">
+  <li *ngFor="let article of data?.articles">
+    <div class="card">
+      <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
+      <div class="card-body">
+        <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
+          {{article.title}}</p>
+
+        <button class="btn btn-primary" (click)="NewsDetail(article)"
+          [class.selected]="article === selectedArticle">Read Full Article</button>
+      </div>
+    </div>
+  </li>
+</ul> -->

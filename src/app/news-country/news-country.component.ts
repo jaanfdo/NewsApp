@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../news.service';
 import { Country } from '../value';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-news-country',
@@ -10,18 +10,23 @@ import { Router } from '@angular/router';
 })
 export class NewsCountryComponent implements OnInit {
   data: any;
-  country:any;
+  country: any;
   selectedArticle: any;
 
-  constructor(private newsService: NewsService, private router: Router) {
+  constructor(private newsService: NewsService, private router: Router, private _Avroute: ActivatedRoute) {
     this.country = Country;
-   }
+  }
 
   ngOnInit() {
-    console.log(this.country[0]);
-    console.log(this.country[0]['id']);
+    let id = this._Avroute.snapshot.paramMap.get('country');
+    console.log(id);
+    if (id === null || id === undefined || id === '') {
+      console.log(this.country[0]);
+      console.log(this.country[0]['id']);
+      id = this.country[0]['id'];
+    }
     this.newsService
-      .data('top-headlines?country=' + this.country[0]['id'])
+      .data('top-headlines?country=' + id)
       .subscribe(data => {
         console.log(data);
         this.selectedArticle = data;

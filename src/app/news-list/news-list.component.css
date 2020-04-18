@@ -51,6 +51,7 @@
     .module {
       font-size: 10px;
       max-height: 75px; }
+      
   }
   @media (max-width: 1024px) {
     .grid {

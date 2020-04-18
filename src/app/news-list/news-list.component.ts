@@ -23,11 +23,13 @@ export class NewsListComponent implements OnInit {
 
   getNews(): void {
     const id = this._Avroute.snapshot.paramMap.get('source');
-    this.newsService
-      .data('top-headlines?sources=' + id)
-      .subscribe(data => {
-        console.log(data);
-        this.article = data;
-      });
+    if (id !== null && id !== undefined && id !== '') {
+      this.newsService
+        .data('top-headlines?sources=' + id)
+        .subscribe(data => {
+          console.log(data);
+          this.article = data;
+        });
+    }
   }
 }
