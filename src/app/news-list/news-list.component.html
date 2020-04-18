@@ -1,14 +1,18 @@
-<ul class="heroes">
-  <li *ngFor="let article of article?.articles">
-    <div class="card">
-      <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
-      <div class="card-body">
-        <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
-          {{article.title}}</p>
+<div class="container">
+  <div class="row">
+    <ul class="heroes">
+      <li *ngFor="let article of article?.articles">
+        <div class="card">
+          <img class="card-img-top" [src]="article.urlToImage" alt="Card image cap" />
+          <div class="card-body">
+            <p class="card-title" (click)="NewsOne(article)" [class.selected]="article === selectedArticle">
+              {{article.title}}</p>
 
-        <button class="btn btn-primary" (click)="NewsOne(article)"
-          [class.selected]="article === selectedArticle">Select Article</button>
-      </div>
-    </div>
-  </li>
-</ul>
+            <button class="btn btn-primary" (click)="NewsOne(article)"
+              [class.selected]="article === selectedArticle">Select Article</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

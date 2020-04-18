@@ -14,9 +14,12 @@ export class NewssourcesComponent implements OnInit {
   }
 
   ngOnInit() {
-    const id = this._Avroute.snapshot.paramMap.get('source');
-    console.log(id);
+    let id = '';
+    if (this._Avroute.snapshot.paramMap.get('source')) {
+      id = this._Avroute.snapshot.paramMap.get('source');
+    }
 
+    console.log(id);
     if (id === null || id === undefined || id === '') {
       this.newsService
         .sourcedata('sources')

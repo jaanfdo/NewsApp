@@ -18,7 +18,11 @@ export class NewsCategoryComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = this._Avroute.snapshot.paramMap.get('category');
+    let id = '';
+    if (this._Avroute.snapshot.paramMap.get('category')) {
+      id = this._Avroute.snapshot.paramMap.get('category');
+    }
+
     console.log(id);
     if (id === null || id === undefined || id === '') {
       console.log(this.category[0]);

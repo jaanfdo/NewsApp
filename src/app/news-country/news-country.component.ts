@@ -18,7 +18,11 @@ export class NewsCountryComponent implements OnInit {
   }
 
   ngOnInit() {
-    let id = this._Avroute.snapshot.paramMap.get('country');
+    let id = '';
+    if (this._Avroute.snapshot.paramMap.get('country')) {
+      id = this._Avroute.snapshot.paramMap.get('country');
+    }
+    
     console.log(id);
     if (id === null || id === undefined || id === '') {
       console.log(this.country[0]);
