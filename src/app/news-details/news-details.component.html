@@ -1,19 +1,22 @@
-<div class="container" *ngIf="articledetail">
+<div class="container mb-4" *ngIf="articledetail">
   <div class="row">
-    <article class="card mb-4">
+    <article class="card mt-2">
       <header class="card-header text-center">
         <div class="card-meta">
           <p><time class="timeago" datetime="articledetail.publishedAt" data-tid="1"></time>
-            {{articledetail.publishedAt | date:"yyyy/MM/dd"}}
+            {{articledetail.publishedAt | date:"yyyy/MM/dd"}} by {{articledetail.author}}
           </p>
+          <!-- <p class="blog-post-meta">December 14, 2013 by <a href="#">Chris</a></p> -->
         </div>
-        <h4 class="card-title">{{articledetail.title}}</h4>
+        <h2 class="card-title text-dark">{{articledetail.title}}</h2>
       </header>
       <a [href]="articledetail.urlToImage">
         <img class="card-img" [src]="articledetail.urlToImage" />
       </a>
       <div class="card-body">
-        <p>{{articledetail.content}}</p>
+        <p><b>Content : </b>{{articledetail.content}}</p>
+        <p class="md-1 text-muted">Source : {{articledetail.source.name}}</p>
+        <p class="md-1"><b>Description : </b>{{articledetail.description}}</p>
         <hr>
         <div class="mt-5">
           <h5>Write a response</h5>

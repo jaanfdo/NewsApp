@@ -37,7 +37,7 @@ export class NewsCategoryComponent implements OnInit {
       });
   }
 
-  NewsOne(item) {
+  NewsList(item) {
     console.log(item.id);
     this.newsService
       .data('top-headlines?category=' + item.id)

@@ -6,11 +6,10 @@
       <div class="col-md-4">
         <h4>Top Categories</h4>
         <hr />
-        <div class="grid grid-pad">
-          <a *ngFor="let item of category" class="col-1-4" [class.selected]="article === selectedArticle" (click)="NewsOne(item)">
-            <div class="module hero">
-              <h4>{{item.name}}</h4>
-            </div>
+        <div class="list-group mb-3">
+          <a *ngFor="let item of category" class="list-group-item d-flex justify-content-between lh-condensed" [class.selected]="article === selectedArticle" (click)="NewsList(item)">
+              <h4 class="my-0">{{item.name}}</h4>
+              <small class="text-muted">{{item.id}}</small>
           </a>
         </div>
       </div>
